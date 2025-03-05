@@ -1,2 +1,2 @@
 # plugin_system_imagetransformer
-Image Transformer uses Glide and provides all it's possibilities in templates
+Image Transformer uses Glide and provides all it's possibilities in templates for Joomla! 4.x
