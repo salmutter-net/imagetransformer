@@ -1,1 +1,14 @@
+.project/
+.buildpath/
+.settings/
+.idea/
+.DS_Store/
+.TemporaryItems/
+.com.apple.timemachine.supported/
+.tags
+.tags_sorted_by_file
+._*
+*.orig
+*.log
+
 composer.lock
