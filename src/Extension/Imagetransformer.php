@@ -13,6 +13,7 @@ namespace Joomla\Plugin\System\Imagetransformer\Extension;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Stream;
 use Joomla\CMS\Factory;
+use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Log\Log;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Uri\Uri;
@@ -63,6 +64,11 @@ final class Imagetransformer extends CMSPlugin
     }
     public static function generateUrl($path, $params): string
     {
+        // Clean imagepath
+        $path = HTMLHelper::cleanImageURL( $path );
+        if ( $path->url !== '' ) {
+            $path = $path->url;
+        }
 
         // Get plugin parameters
         $plugin = PluginHelper::getPlugin('system', 'imagetransformer');
