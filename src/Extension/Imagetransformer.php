@@ -64,12 +64,13 @@ final class Imagetransformer extends CMSPlugin
     }
     public static function generateUrl($path, $params): string
     {
+
         // Clean imagepath
         $path = HTMLHelper::cleanImageURL( $path );
         if ( $path->url !== '' ) {
             $path = $path->url;
         }
-        $path = rawurlencode(cleanImageUrl($path));
+        $path = urldecode($path);
 
         // Get plugin parameters
         $plugin = PluginHelper::getPlugin('system', 'imagetransformer');
