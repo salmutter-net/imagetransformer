@@ -113,6 +113,7 @@ final class Imagetransformer extends CMSPlugin
             $signkey = (string)$pluginParams->get('signkey');
 
             // Validate HTTP signature
+            $path = urldecode($path);
             SignatureFactory::create($signkey)->validateRequest($path, $params);
 
         } catch (SignatureException $e) {
