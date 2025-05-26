@@ -104,7 +104,7 @@ final class Imagetransformer extends CMSPlugin
         $imageCacheFolder = JPATH_ROOT . DIRECTORY_SEPARATOR . $pluginParams->get('image-cache-folder', 'images-cache');
 
         // Create cache directory, if not existent
-        if ( !mkdir( $concurrentDirectory = $imageCacheFolder, 664, true ) && !is_dir( $concurrentDirectory ) ) {
+        if ( !@mkdir( $concurrentDirectory = $imageCacheFolder, 664, true ) && !is_dir( $concurrentDirectory ) ) {
             throw new \RuntimeException( sprintf( 'Directory "%s" was not created', $concurrentDirectory ) );
         }
 
